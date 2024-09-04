@@ -10,4 +10,19 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    const humanChoices = prompt("Rock, Paper, or Scissors").toLowerCase();
+    if (humanChoices === "rock") {
+        return "Rock";
+    } else if (humanChoices === "paper") {
+        return "Paper";
+    } else if (humanChoices === "scissors") {
+        return "Scissors";
+    } else {
+        console.log("That is not a valid answer");
+    }
+}
+
+
+
+
