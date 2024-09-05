@@ -1,7 +1,5 @@
-let humanScore = 0;
-let computerScore = 0;
-
-
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
     const computerChoices = ["Rock", "Paper", "Scissors"];
@@ -29,36 +27,36 @@ function getHumanChoice() {
 }
 
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === "Paper" && computerChoice === "Rock") {
-        console.log('You win!');
-        // return humanScore += 1; 
-    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
-        console.log('You lose!');
-        // return computerScore += 1;
-    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        console.log('You win!');
-        // return humanScore += 1;
-    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
-        console.log('You lose!');
-        // return computerScore += 1;
-    } else if (humanChoice == "Rock" && computerChoice === "Scissors") {
-        console.log('You win!');
-        // return humanScore += 1;
-    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
-        console.log('You lose!');
-        // return computerScore += 1;
-    } else {
-        console.log("It's a tie!");
+
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+    function playRound(humanChoice, computerChoice) {
+        if (humanChoice === computerChoice) {
+            console.log("It's a tie!");
+        } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+            console.log('You win!');
+            humanScore++;
+        } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+            console.log('You win!');
+            humanScore++;
+        } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+            console.log('You win!');
+            humanScore++;
+        } else {
+            console.log("You lose!");
+            computerScore++;
+        }
     }
-
-
+    playRound(humanSelection, computerSelection);
+    console.log(humanScore);
+    console.log(computerScore);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+playGame();
 
-playRound(humanSelection, computerSelection);
+
+
 
 
 
