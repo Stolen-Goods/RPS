@@ -1,5 +1,5 @@
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
 function getComputerChoice() {
     const computerChoices = ["Rock", "Paper", "Scissors"];
@@ -26,31 +26,40 @@ function getHumanChoice() {
     }
 }
 
-
-
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
-            console.log("It's a tie!");
+            return "It's a tie!";
         } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-            console.log('You win!');
             humanScore++;
+            return 'You win!';
         } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-            console.log('You win!');
             humanScore++;
+            return 'You win!';
         } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
-            console.log('You win!');
             humanScore++;
+            return 'You win!';
         } else {
-            console.log("You lose!");
             computerScore++;
+            return 'You lose!';
         }
     }
-    playRound(humanSelection, computerSelection);
-    console.log(humanScore);
-    console.log(computerScore);
+    for (i = 0; i < 5; i++) {
+        console.log(playRound(humanSelection, computerSelection));
+        console.log(humanScore);
+        console.log(computerScore);
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+    }
+    if (humanScore > computerScore) {
+        console.log("You are the winner!");
+    } else if (humanScore < computerScore) {
+        console.log("The computer is the winner!");
+    } else {
+        console.log("You tied with the computer!");
+    }
 }
 
 playGame();
