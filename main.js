@@ -1,6 +1,3 @@
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-
 function getComputerChoice() {
     const computerChoices = ["Rock", "Paper", "Scissors"];
     const computerAnswer = Math.floor(Math.random()*computerChoices.length);
@@ -22,11 +19,13 @@ function getHumanChoice() {
     } else if (humanChoices === "scissors") {
         return "Scissors";
     } else {
-        console.log("That is not a valid answer");
+        return "That is not a valid answer";
     }
 }
 
 function playGame() {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
     let humanScore = 0;
     let computerScore = 0;
     function playRound(humanChoice, computerChoice) {
@@ -46,12 +45,12 @@ function playGame() {
             return 'You lose!';
         }
     }
-    for (i = 0; i < 5; i++) {
-        console.log(playRound(humanSelection, computerSelection));
-        console.log(humanScore);
-        console.log(computerScore);
+    for (let i = 0; i < 5; i++) {
         humanSelection = getHumanChoice();
         computerSelection = getComputerChoice();
+        console.log(humanScore);
+        console.log(computerScore);
+        console.log(playRound(humanSelection, computerSelection));
     }
     if (humanScore > computerScore) {
         console.log("You are the winner!");
