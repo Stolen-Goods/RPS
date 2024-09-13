@@ -12,3 +12,23 @@ body {
     border-radius: 10px;
     font-size: 2rem;
 }
+
+#scores {
+    display: flex;
+    padding: 8em;
+    justify-content: space-around;
+}
+
+#human-score, #computer-score {
+    font-size: 2rem;
+    padding: 2em 3em;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#winning {
+    background-color: white;
+    padding: 2em 3em;
+    text-align: center;
+    font-size: 2rem;
+}
