@@ -1,0 +1,14 @@
+body {
+    background-color: aquamarine;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#rock, #paper, #scissors {
+    padding: 3em 5em;
+    border-radius: 10px;
+    font-size: 2rem;
+}
